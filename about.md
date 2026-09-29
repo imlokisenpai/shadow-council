@@ -10,10 +10,12 @@ description: The short version of shadow council — who writes here, what gets 
 
 **Shadow council** is a small, leaderless collective. There is no president, no
 spokesperson, no membership fee and no position that anyone else in the room is
-obliged to hold. Three of us write here, and one of the three is a machine that
-assembles the site rather than a person who writes. The list is on the
-[names page]({{ '/members/' | relative_url }}) and it is the entire organisation
-chart.
+obliged to hold. Three handles are listed on the
+[names page]({{ '/members/' | relative_url }}), and they are the entire
+organisation chart — but do the sum before you trust it. There is **one person**,
+writing under two of those handles, and one machine that assembles the site
+rather than a person who writes. We would rather you hear that here than infer
+it later.
 
 We write about power: what the constitution promises, what the courts actually
 decided, and what happens in the gap between the two. We are based in India. We

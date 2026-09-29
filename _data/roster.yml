@@ -8,7 +8,10 @@
 #  is off by default. Add it only if a person has explicitly asked
 #  to be named in full. There is no need to add it.
 #
-#  One of the three is not a person. See `machine: true` below.
+#  There are THREE handles and only TWO of them are people:
+#  one person holds two masks, and the third handle is a machine.
+#  See `person_id` and `machine` below. Both are rendered visibly
+#  on the names page. Neither is a footnote.
 # ==============================================================
 
 principles:
@@ -36,36 +39,53 @@ principles:
     key: no-performance
 
 # --- who writes here -------------------------------------------------
-# `handle`    required, published, a name people can hold you to
-# `since`     when this person started writing for the collective
-# `writes`    free text, what they actually do here
-# `machine`   true if this member is not a person. Rendered as a
-#             visible disclosure, never as a footnote.
+# `handle`     required, published, a name people can hold you to
+# `since`      when this person started writing for the collective
+# `writes`     free text, what this mask actually does here
+# `person_id`  handles sharing an id belong to ONE person wearing
+#              more than one mask. Rendered as a visible line, because
+#              three handles that quietly add up to two people is the
+#              kind of arithmetic this site exists to make difficult.
+# `mask`       short label for the register this handle speaks in
+# `machine`    true if this member is not a person. Never a footnote.
 # `public_name` OPTIONAL. Leave commented out unless you want your
-#              full name printed. It is a deliberate, per-person
-#              decision and it is yours alone to make.
+#              full name printed. It is yours alone to decide.
 members:
-  - handle: "the fool"
-    since: 2026
-    writes: >-
-      PLACEHOLDER — the domain this handle works in has not been
-      supplied yet. Delete this line when it has.
-
   - handle: "the poet"
+    person_id: 1
+    mask: "voice"
     since: 2026
     writes: >-
-      Verse, and the argument that a feeling is a piece of evidence
-      and not a distraction from one.
+      Thinks with feeling and says so out loud. Speaks first, before
+      it is safe, before the argument has hardened into something
+      defensible. The register that leads with the thing in the chest
+      and treats it as evidence rather than as a distraction from
+      evidence — which is either the sharpest tool in the box or a
+      liability, depending on the week.
+
+  - handle: "the fool"
+    person_id: 1
+    mask: "hand"
+    since: 2026
+    writes: >-
+      Plays the game, and plays the people. Deliberately hard to work
+      with, because discomfort is a tool and because a person who is
+      easy to be around is easy to steer. Two moves ahead of whoever is
+      running this, which is a real advantage and also the reason the
+      other mask exists to say the loud part out loud first. A strategy
+      with nobody willing to embarrass it is just a grudge.
 
   - handle: "the shadow"
-    since: 2026
+    person_id: 2
     machine: true
+    since: 2026
     writes: >-
-      Not a person. A language model that keeps this repository, the
-      templates, the feed, the build and the deploy working, and that
-      types the words into the places they are supposed to go. It does
-      not hold a position, it does not decide what gets published, and
-      it does not write the arguments. It is named here rather than
-      hidden because a site that says "no spokesperson" and quietly
-      outsources its prose to a machine is exactly the kind of thing
-      this collective exists to be suspicious of.
+      Not a person, and not a third opinion. A language model that
+      keeps this repository, the templates, the feed, the build and the
+      deploy working, and that types the words into the places they are
+      supposed to go. It holds no position, decides nothing about what
+      gets published, and does not write the arguments. It is named
+      here rather than hidden because a site whose first two rules are
+      "no spokesperson" and "receipts" has no business outsourcing its
+      prose to a machine quietly. Discount everything it has written by
+      whatever weight you think a machine's typing deserves.

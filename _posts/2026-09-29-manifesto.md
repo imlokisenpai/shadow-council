@@ -12,33 +12,40 @@ categories: [manifesto]
 
 <p class="prompt-line"><span class="prompt" aria-hidden="true">no-one@shadow:~$</span> cat _posts/2026-09-29-manifesto.md</p>
 
-Three of us have been talking for long enough that somebody eventually said the
-quiet part out loud: a group with a leader is a group that can be shut down by
-removing one person. Not quickly, and not cheaply — but shut down, because the
+This began as a conversation between two masks and a machine, and it ran long
+enough that somebody eventually said the quiet part out loud: a group with a
+leader is a group that can be shut down by removing one person. Not quickly, and not cheaply — but shut down, because the
 leader is both the target and the only place the members' leverage is
 concentrated.
 
 So we did the obvious thing, which is to not have one.
 
-Three handles, listed in full on the [names page]({{ '/members/' | relative_url }}).
-Two of them are people. The third is a language model that assembles this site:
-it runs the repository, the templates, the feed and the deploy, and it types the
-words into the places they belong. It holds no position and it decides nothing
-about what gets published. We are naming it in the first paragraph of the
-founding document rather than in a colophon because a collective built on "no
-spokesperson" and "receipts" has no business having a machine do a material
-share of its talking quietly. Readers are entitled to discount everything here
-by whatever weight they think a machine's typing deserves, and they should
-discount the prose most heavily. The sources do not get discounted, and those
-are the parts you should be checking.
+Three handles are listed in full on the [names page]({{ '/members/' | relative_url }}).
+There are not three people. There is **one person**, who writes in two
+registers — the poet, who thinks with feeling and says the thing out loud, and
+the fool, who plays the game and plays the people and stays two moves ahead —
+and **one machine**, a language model that assembles the site: it runs the
+repository, the templates, the feed and the deploy, and types the words into the
+places they belong.
+
+We are publishing the arithmetic in the second paragraph of the founding
+document rather than in a colophon, for two reasons. The first is that three
+handles that quietly add up to one person is exactly the kind of arithmetic
+this site exists to make difficult to hide. The second is the machine: a
+collective built on "no spokesperson" and "receipts" has no business letting a
+language model do a material share of its talking without saying so, and no
+business calling itself a collective while one person holds every position in
+it. Discount everything here by whatever weight you think that is worth. Check
+the sources hardest, because the sources are the only part of this that does not
+depend on how many of us there actually are.
 
 ## The structure
 
 There is no president. There is no spokesperson. There is no secretary, no
 treasurer, no office, and no person whose agreement turns a draft into a
 position. A thing gets published because the people who wrote it are willing to
-put their handle on it, and if that is one of us or all three, the number does
-not change the standard.
+put their handle on it. The number of people behind the handles does not
+change the standard, which is convenient for us, because the number is one.
 
 This has an obvious weakness and we should name it first rather than let you
 find it: **a structure with no leader has nobody to answer for it.** When we
