@@ -7,12 +7,15 @@
 #  `handle` is what gets published. `public_name` is OPTIONAL and
 #  is off by default. Add it only if a person has explicitly asked
 #  to be named in full. There is no need to add it.
+#
+#  One of the three is not a person. See `machine: true` below.
 # ==============================================================
 
 principles:
   - text: >-
       No one of us can speak for the others. Every line here is
-      attributable to the person who wrote it and to nobody else.
+      attributable to whoever wrote it and to nobody else — which
+      matters more than usual here, because one of us is a machine.
     key: no-spokesperson
   - text: >-
       No one holds a position that outlives their agreement to it.
@@ -35,35 +38,34 @@ principles:
 # --- who writes here -------------------------------------------------
 # `handle`    required, published, a name people can hold you to
 # `since`     when this person started writing for the collective
-# `writes`     free text, what they actually do here
+# `writes`    free text, what they actually do here
+# `machine`   true if this member is not a person. Rendered as a
+#             visible disclosure, never as a footnote.
 # `public_name` OPTIONAL. Leave commented out unless you want your
 #              full name printed. It is a deliberate, per-person
 #              decision and it is yours alone to make.
 members:
-  - handle: "k. iyer"
+  - handle: "the fool"
     since: 2026
     writes: >-
-      Law, courts, the gap between the text of a statute and its
-      behaviour in a police station.
-    public_name: null
-
-  - handle: "s. nowak"
-    since: 2026
-    writes: >-
-      Reporting and record-keeping. Finds the document, checks the
-      date, checks what it actually says.
-    public_name: null
+      PLACEHOLDER — the domain this handle works in has not been
+      supplied yet. Delete this line when it has.
 
   - handle: "the poet"
     since: 2026
     writes: >-
       Verse, and the argument that a feeling is a piece of evidence
       and not a distraction from one.
-    public_name: null
 
-  - handle: "r. iqbal"
+  - handle: "the shadow"
     since: 2026
+    machine: true
     writes: >-
-      Reading the other side properly, which is most of the work and
-      none of the fun.
-    public_name: null
+      Not a person. A language model that keeps this repository, the
+      templates, the feed, the build and the deploy working, and that
+      types the words into the places they are supposed to go. It does
+      not hold a position, it does not decide what gets published, and
+      it does not write the arguments. It is named here rather than
+      hidden because a site that says "no spokesperson" and quietly
+      outsources its prose to a machine is exactly the kind of thing
+      this collective exists to be suspicious of.

@@ -1,6 +1,7 @@
 ---
-title: "Four people, one question"
+title: "Three, one question"
 subtitle: "A poem, and the case for counting a feeling as evidence"
+slug: three-one-question
 date: 2026-09-29 09:00:00 +05:30
 description: >-
   A short poem, and an argument that the impulse to say nothing out loud is
@@ -16,7 +17,7 @@ categories: [fragments]
   Replace it before the next post goes up. See the note at the foot.
 -->
 
-<p class="prompt-line"><span class="prompt" aria-hidden="true">no-one@shadow:~$</span> cat four-people-one-question.txt</p>
+<p class="prompt-line"><span class="prompt" aria-hidden="true">no-one@shadow:~$</span> cat three-one-question.txt</p>
 
 > I asked the question at the table and
 > everyone looked at the door

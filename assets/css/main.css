@@ -1001,3 +1001,17 @@ body.no-js .caret, body.no-js .typed { display: none; }
   .theme-toggle__label { display: none; }
   .nav__key { display: none; }
 }
+
+/* non-human member, disclosed rather than footnoted */
+.roster__badge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid var(--magenta);
+  border-radius: 2px;
+  color: var(--fg);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}

@@ -37,7 +37,7 @@ be checkable.
 <ul class="roster">
 {%- for m in members %}
   <li class="roster__item">
-    <p class="roster__handle">{{ m.handle }}</p>
+    <p class="roster__handle">{{ m.handle }}{% if m.machine %} <span class="roster__badge">machine</span>{% endif %}</p>
     <p class="roster__writes">{{ m.writes | strip }}</p>
     <p class="roster__since"><span class="prompt" aria-hidden="true">-</span> writing here since {{ m.since }}</p>
     {%- if m.public_name %}
@@ -48,10 +48,14 @@ be checkable.
 </ul>
 
 <p class="roster__note">
-  The handles above are the people. Full names are published only where the
-  person they belong to asked for it, which is currently nobody's decision to
-  make but their own. If you are reading this and you think that is cowardice:
-  it is not. It is the entire reason this structure exists.
+  Two of these three are people. The third is a machine, and it is named
+  because the alternative is worse: a collective whose founding document says
+  "no spokesperson" and "receipts", and which then lets a language model do a
+  material share of the talking without saying so, has built the exact thing it
+  claims to refuse. Full names are published only where the person they belong
+  to asked for it, which is currently nobody's decision to make but their own.
+  If you are reading this and you think that is cowardice: it is not. It is the
+  entire reason this structure exists.
 </p>
 
 ## What this does not buy us

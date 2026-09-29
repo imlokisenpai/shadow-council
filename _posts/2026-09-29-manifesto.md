@@ -12,7 +12,7 @@ categories: [manifesto]
 
 <p class="prompt-line"><span class="prompt" aria-hidden="true">no-one@shadow:~$</span> cat _posts/2026-09-29-manifesto.md</p>
 
-Four of us have been talking for long enough that somebody eventually said the
+Three of us have been talking for long enough that somebody eventually said the
 quiet part out loud: a group with a leader is a group that can be shut down by
 removing one person. Not quickly, and not cheaply — but shut down, because the
 leader is both the target and the only place the members' leverage is
@@ -20,12 +20,24 @@ concentrated.
 
 So we did the obvious thing, which is to not have one.
 
+Three handles, listed in full on the [names page]({{ '/members/' | relative_url }}).
+Two of them are people. The third is a language model that assembles this site:
+it runs the repository, the templates, the feed and the deploy, and it types the
+words into the places they belong. It holds no position and it decides nothing
+about what gets published. We are naming it in the first paragraph of the
+founding document rather than in a colophon because a collective built on "no
+spokesperson" and "receipts" has no business having a machine do a material
+share of its talking quietly. Readers are entitled to discount everything here
+by whatever weight they think a machine's typing deserves, and they should
+discount the prose most heavily. The sources do not get discounted, and those
+are the parts you should be checking.
+
 ## The structure
 
 There is no president. There is no spokesperson. There is no secretary, no
 treasurer, no office, and no person whose agreement turns a draft into a
 position. A thing gets published because the people who wrote it are willing to
-put their handle on it, and if that is two of us or all four, the number does
+put their handle on it, and if that is one of us or all three, the number does
 not change the standard.
 
 This has an obvious weakness and we should name it first rather than let you
@@ -104,7 +116,7 @@ imply a sequence and there isn't one:
 - **[Fanatism is not the crowd]({{ '/2026/09/29/fanatism-is-not-the-crowd/' | relative_url }})** —
   Gujarat 2002 and Kashmir 1989–90, read for the pattern rather than for the
   teams.
-- **[Four people, one question]({{ '/2026/09/29/four-people-one-question/' | relative_url }})** — a poem,
+- **[Three, one question]({{ '/2026/09/29/three-one-question/' | relative_url }})** — a poem,
   and an argument that a feeling counts as evidence.
 
 If the first of those is useful, the feed is in the masthead. If it isn't,
