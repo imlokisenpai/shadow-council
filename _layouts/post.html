@@ -1,0 +1,78 @@
+---
+layout: default
+---
+<article class="panel post">
+
+  <div class="panel__head">
+    <div class="crumbs">
+      <a href="{{ '/' | relative_url }}">root</a>
+      <span aria-hidden="true">:</span><span aria-hidden="true">~</span>
+      <a href="{{ '/' | relative_url }}">council</a>
+      <span aria-hidden="true">/</span>
+      <span class="crumbs__file">{{ page.slug | default: page.title | slugify }}</span>
+    </div>
+    <span class="stamp">{{ page.date | date: "%Y.%m.%d" }} &mdash; {{ page.date | date: "%H:%M" }}Z</span>
+  </div>
+
+  <header class="post__header">
+    <h1 class="post__title glitch glitch--soft" data-text="{{ page.title | escape }}">{{ page.title }}</h1>
+    {%- if page.subtitle %}
+    <p class="post__subtitle">{{ page.subtitle }}</p>
+    {%- endif %}
+    {%- if page.draft %}
+    <p class="badge badge--warn">DRAFT &mdash; not published to the feed</p>
+    {%- endif %}
+  </header>
+
+  <div class="post__content prose">
+    {{ content }}
+  </div>
+
+  <footer class="post__footer">
+    <dl class="postmeta">
+      {%- if page.date %}
+      <div><dt>written</dt><dd>{{ page.date | date: "%d %b %Y" }}</dd></div>
+      {%- endif %}
+      {%- if page.updated %}
+      <div><dt>revised</dt><dd>{{ page.updated | date: "%d %b %Y" }}</dd></div>
+      {%- endif %}
+      {%- if page.reading_time or page.content %}
+      <div><dt>read</dt><dd>{% include reading_time.html %}</dd></div>
+      {%- endif %}
+    </dl>
+
+    {%- if page.tags and page.tags.size > 0 %}
+    <p class="tagline"><span class="prompt" aria-hidden="true">#</span>
+      {%- for tag in page.tags -%}
+        {%- assign tslug = tag | slugify %}
+        <a class="tag" href="{{ '/threads/' | append: tslug | relative_url }}/">#{{ tag }}</a>
+      {%- endfor %}
+    </p>
+    {%- endif %}
+
+    {%- if page.categories and page.categories.size > 0 %}
+    <p class="tagline"><span class="prompt" aria-hidden="true">in</span>
+      {%- for cat in page.categories -%}
+        {%- assign cslug = cat | slugify %}
+        <a class="tag tag--cat" href="{{ '/sections/' | append: cslug | relative_url }}/">{{ cat }}</a>
+      {%- endfor %}
+    </p>
+    {%- endif %}
+
+    <nav class="pager" aria-label="post navigation">
+      {%- if page.previous %}
+      <a class="pager__link pager__link--prev" href="{{ page.previous.url | relative_url }}" rel="prev">
+        <span class="pager__dir">&larr; previous</span>
+        <span class="pager__name">{{ page.previous.title }}</span>
+      </a>
+      {%- else %}<span class="pager__void">no earlier transmission</span>{% endif %}
+
+      {%- if page.next %}
+      <a class="pager__link pager__link--next" href="{{ page.next.url | relative_url }}" rel="next">
+        <span class="pager__dir">next &rarr;</span>
+        <span class="pager__name">{{ page.next.title }}</span>
+      </a>
+      {%- else %}<span class="pager__void">end of tape</span>{% endif %}
+    </nav>
+  </footer>
+</article>

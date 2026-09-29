@@ -1,0 +1,34 @@
+---
+layout: default
+title: threads
+permalink: /threads/
+sitemap: false
+---
+{%- assign tagcount = site.tags | size -%}
+<section class="panel">
+  <div class="panel__head">
+    <div class="crumbs"><a href="{{ '/' | relative_url }}">root</a><span aria-hidden="true">:</span><span aria-hidden="true">~</span><span class="crumbs__file">threads</span></div>
+    <span class="stamp">{{ tagcount }} thread{% if tagcount != 1 %}s{% endif %}</span>
+  </div>
+
+  <header class="page-head">
+    <h1 class="page-title glitch glitch--soft" data-text="threads">threads</h1>
+    <p class="page-subtitle">Every keyword we have used, and how often. Pick one and follow it.</p>
+  </header>
+
+  {%- assign sorted = site.tags | sort -%}
+  {%- if sorted.size > 0 %}
+  <ul class="cloud">
+    {%- for tag in sorted %}
+    {%- assign tslug = tag[0] | slugify %}
+    <li>
+      <a class="tag tag--big" href="{{ '/threads/' | append: tslug | relative_url }}/">
+        #{{ tag[0] }}<span class="tag__count">{{ tag[1].size }}</span>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- else %}
+  <p class="empty"><span class="prompt" aria-hidden="true">$</span> no tags yet.</p>
+  {%- endif %}
+</section>

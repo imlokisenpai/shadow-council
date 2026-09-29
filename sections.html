@@ -1,0 +1,34 @@
+---
+layout: default
+title: sections
+permalink: /sections/
+sitemap: false
+---
+{%- assign catcount = site.categories | size -%}
+<section class="panel">
+  <div class="panel__head">
+    <div class="crumbs"><a href="{{ '/' | relative_url }}">root</a><span aria-hidden="true">:</span><span aria-hidden="true">~</span><span class="crumbs__file">sections</span></div>
+    <span class="stamp">{{ catcount }} section{% if catcount != 1 %}s{% endif %}</span>
+  </div>
+
+  <header class="page-head">
+    <h1 class="page-title glitch glitch--soft" data-text="sections">sections</h1>
+    <p class="page-subtitle">The four things we write about. One section per transmission.</p>
+  </header>
+
+  {%- assign sorted = site.categories | sort -%}
+  {%- if sorted.size > 0 %}
+  <ul class="cloud">
+    {%- for cat in sorted %}
+    {%- assign cslug = cat[0] | slugify %}
+    <li>
+      <a class="tag tag--big tag--cat" href="{{ '/sections/' | append: cslug | relative_url }}/">
+        {{ cat[0] }}<span class="tag__count">{{ cat[1].size }}</span>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- else %}
+  <p class="empty"><span class="prompt" aria-hidden="true">$</span> no categories yet.</p>
+  {%- endif %}
+</section>

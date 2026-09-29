@@ -1,0 +1,38 @@
+{%- assign list = include.posts -%}
+{%- if list and list.size > 0 %}
+<ol class="entries">
+  {%- for post in list %}
+  {%- assign label = "LOG" -%}
+  {%- if post.categories and post.categories.size > 0 -%}
+    {%- assign label = post.categories.first | upcase | slice: 0, 4 -%}
+  {%- endif %}
+  <li class="entry">
+    <article>
+      <div class="entry__head">
+        <time class="entry__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
+        <span class="entry__kind" aria-hidden="true">{{ label }}</span>
+      </div>
+
+      <h2 class="entry__title">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h2>
+
+      {%- if post.description or post.subtitle %}
+      <p class="entry__excerpt">{{ post.description | default: post.subtitle | strip_html | truncate: 190 }}</p>
+      {%- elsif post.content %}
+      <p class="entry__excerpt">{{ post.content | strip_html | truncate: 190 }}</p>
+      {%- endif %}
+
+      <p class="entry__meta">
+        {%- for tag in post.tags -%}
+          {%- assign tslug = tag | slugify %}
+          <a class="tag" href="{{ '/threads/' | append: tslug | relative_url }}/">#{{ tag }}</a>
+        {%- endfor %}
+      </p>
+    </article>
+  </li>
+  {%- endfor %}
+</ol>
+{%- else %}
+<p class="empty"><span class="prompt" aria-hidden="true">$</span> no entries. transmission aborted.</p>
+{%- endif %}

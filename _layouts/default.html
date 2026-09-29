@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}" data-theme="dark">
+{%- include head.html -%}
+<body class="page-{{ page.layout | default: 'default' }}">
+  <canvas class="matrix" id="matrix" aria-hidden="true"></canvas>
+  <div class="crt" aria-hidden="true">
+    <span class="crt__scan"></span>
+    <span class="crt__sweep"></span>
+  </div>
+
+  {%- include chrome.html -%}
+
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+</body>
+</html>

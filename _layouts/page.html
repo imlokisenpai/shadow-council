@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<article class="panel">
+  <div class="panel__head">
+    <div class="crumbs"><a href="{{ '/' | relative_url }}">root</a><span aria-hidden="true">:</span><span aria-hidden="true">~</span><span class="crumbs__file">{{ page.slug | default: page.title | slugify }}</span></div>
+    <span class="stamp">plaintext</span>
+  </div>
+
+  <header class="page-head">
+    <h1 class="page-title glitch glitch--soft" data-text="{{ page.title | escape }}">{{ page.title }}</h1>
+    {%- if page.subtitle %}
+    <p class="page-subtitle">{{ page.subtitle }}</p>
+    {%- endif %}
+  </header>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+</article>

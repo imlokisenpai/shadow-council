@@ -1,0 +1,60 @@
+<a class="skip-link" href="#main">[ skip to the text ]</a>
+
+<div class="shell">
+  <header class="masthead">
+    <div class="masthead__bar window-chrome">
+      <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="masthead__title">~/council &mdash; {{ page.url | replace: baseurl | replace: "/" | default: "home" }}</span>
+      <button class="theme-toggle" type="button" data-theme-toggle
+              aria-label="Toggle phosphor colour scheme" title="toggle phosphor">
+        <span class="theme-toggle__glyph" aria-hidden="true">◐</span>
+        <span class="theme-toggle__label">PHOSPHOR</span>
+      </button>
+    </div>
+
+    <div class="masthead__hero">
+      {%- comment -%} pages flagged wordmark_heading let the site wordmark be their h1 {%- endcomment -%}
+      {%- if page.wordmark_heading %}
+      <h1 class="masthead__logo glitch" data-text="{{ site.title | escape }}">{{ site.title }}</h1>
+      {%- else %}
+      <p class="masthead__logo glitch" data-text="{{ site.title | escape }}">{{ site.title }}</p>
+      {%- endif %}
+      <p class="masthead__tagline">
+        <span class="prompt" aria-hidden="true">no-one@shadow:~$</span>
+        <span class="typed" data-type-target data-type-text="{{ site.tagline | strip | escape }}" aria-live="polite">{{ site.tagline | strip }}</span><span class="caret" aria-hidden="true">█</span>
+      </p>
+    </div>
+
+    <nav class="nav" aria-label="primary">
+      <ul class="nav__list">
+        <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}><span class="nav__key" aria-hidden="true">[~/]</span>index</a></li>
+        <li><a href="{{ '/threads/' | relative_url }}"{% if page.url contains '/threads' %} aria-current="page"{% endif %}><span class="nav__key" aria-hidden="true">[t]</span>threads</a></li>
+        <li><a href="{{ '/sections/' | relative_url }}"{% if page.url contains '/sections' %} aria-current="page"{% endif %}><span class="nav__key" aria-hidden="true">[c]</span>sections</a></li>
+        <li><a href="{{ '/members/' | relative_url }}"{% if page.url contains '/members' %} aria-current="page"{% endif %}><span class="nav__key" aria-hidden="true">[n]</span>names</a></li>
+        <li><a href="{{ '/about/' | relative_url }}"{% if page.url contains '/about' %} aria-current="page"{% endif %}><span class="nav__key" aria-hidden="true">[?]</span>about</a></li>
+        <li><a href="{{ '/feed.xml' | relative_url }}"><span class="nav__key" aria-hidden="true">[r]</span>rss</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="wrap">
+    {{ content }}
+  </main>
+
+  <footer class="colophon">
+    <div class="window-chrome colophon__bar">
+      <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="masthead__title">status</span>
+      <span class="colophon__status" data-statusline>initialising</span>
+    </div>
+    <div class="colophon__body">
+      <p><span class="prompt" aria-hidden="true">no-one@shadow:~$</span> uptime &rarr; <span data-uptime>--</span></p>
+      <p>Built with Jekyll. Shipped from GitHub Actions. No masthead, no owner &copy; <span data-year>&nbsp;</span> {{ site.author.name | default: site.author.handle }}.</p>
+      <p class="colophon__links">
+        <a href="{{ '/feed.xml' | relative_url }}">rss</a> &middot;
+        <a href="{{ '/sitemap.xml' | relative_url }}">sitemap</a> &middot;
+        <a href="https://jekyllrb.com/" rel="noopener">jekyll</a>
+      </p>
+    </div>
+  </footer>
+</div>

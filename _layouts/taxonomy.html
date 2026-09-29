@@ -1,0 +1,31 @@
+---
+layout: default
+---
+{%- assign kind = page.kind | default: "tag" -%}
+{%- assign label = page.kind_label | default: kind -%}
+{%- assign plural = page.plural_label | default: kind | append: "s" -%}
+{%- assign base = page.base | default: "/threads" -%}
+{%- assign posts = page.posts -%}
+{%- assign count = posts | size -%}
+
+<article class="panel">
+  <div class="panel__head">
+    <div class="crumbs">
+      <a href="{{ '/' | relative_url }}">root</a><span aria-hidden="true">:</span><span aria-hidden="true">~</span>
+      <a href="{{ base | append: '/' | relative_url }}">{{ plural }}</a><span aria-hidden="true">/</span>
+      <span class="crumbs__file">{{ page.slug }}</span>
+    </div>
+    <span class="stamp">{{ count }} entr{% if count == 1 %}y{% else %}ies{% endif %}</span>
+  </div>
+
+  <header class="page-head">
+    <p class="page-kicker">
+      <span class="prompt" aria-hidden="true">no-one@shadow:/{{ plural }}$</span> grep -ri &ldquo;{{ page.slug }}&rdquo; .
+    </p>
+    <h1 class="page-title glitch glitch--soft" data-text="{{ page.title | escape }}">{{ page.title }}</h1>
+  </header>
+
+  {% include post_list.html posts=posts %}
+
+  <p class="backlink"><a href="{{ base | append: '/' | relative_url }}">&larr; all {{ plural }}</a></p>
+</article>

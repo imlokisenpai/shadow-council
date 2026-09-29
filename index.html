@@ -1,0 +1,88 @@
+---
+layout: default
+title: null
+permalink: /
+wordmark_heading: true
+pagination:
+  enabled: true
+---
+{%- assign total = site.posts | size -%}
+
+<section class="hero panel">
+  <div class="panel__head">
+    <div class="crumbs"><a href="{{ '/' | relative_url }}">root</a><span aria-hidden="true">:</span><span aria-hidden="true">~</span><span class="crumbs__file">index</span></div>
+    <span class="stamp">{{ total }} document{% if total != 1 %}s{% endif %} on file</span>
+  </div>
+
+  <pre class="hero__banner" aria-hidden="true"><code>    ▄▄▄  ▄▄▄  ▄▄▄▄ ▄▄▄  ▄▄▄
+    █ █  █ █  ██▄▄█ █ █  █ █
+    █▄█▄▄█▄█▄▄ █ █▄█▄▄█▄█▄█</code></pre>
+
+  <p class="hero__blurb">{{ site.description }}</p>
+
+  <ul class="hero__stats">
+    <li><span class="hero__num" data-count="{{ total }}">0</span><span class="hero__label">documents</span></li>
+    <li><span class="hero__num" data-count="{{ site.tags | size }}">0</span><span class="hero__label">threads</span></li>
+    <li><span class="hero__num" data-count="{{ site.categories | size }}">0</span><span class="hero__label">sections</span></li>
+  </ul>
+
+  <p class="hero__cta">
+    <a class="btn" href="{{ '/feed.xml' | relative_url }}">subscribe via rss</a>
+    <a class="btn btn--ghost" href="{{ '/about/' | relative_url }}">read the brief</a>
+    <a class="btn btn--ghost" href="{{ '/members/' | relative_url }}">who we are</a>
+  </p>
+</section>
+
+{%- if paginator %}
+{%- assign current = paginator.page | default: 1 %}
+{%- assign last_page = paginator.total_pages %}
+<section class="panel">
+  <div class="panel__head">
+    <div class="crumbs"><a href="{{ '/' | relative_url }}">root</a><span aria-hidden="true">:</span><span aria-hidden="true">~</span><span class="crumbs__file">council</span></div>
+    <span class="stamp">page {{ current }} / {{ last_page }}</span>
+  </div>
+
+  {% include post_list.html posts=paginator.posts %}
+
+  {%- if last_page > 1 %}
+  <nav class="pager pager--listing" aria-label="pagination">
+    {%- if current > 1 %}
+    {%- assign prev = current | minus: 1 %}
+    <a class="pager__link pager__link--prev" href="{% if prev == 1 %}{{ '/' | relative_url }}{% else %}{{ '/page' | append: prev | append: '/' | relative_url }}{% endif %}">
+      <span class="pager__dir">&larr; newer</span>
+      <span class="pager__name">page {{ prev }}</span>
+    </a>
+    {%- else %}<span class="pager__void">&larr; nothing newer</span>{% endif %}
+
+    <span class="pager__pages">
+      {%- for i in (1..last_page) -%}
+        {%- if i == current -%}
+          <span class="pager__page is-current" aria-current="page">{{ i }}</span>
+        {%- else -%}
+          {%- if i == 1 -%}
+          <a class="pager__page" href="{{ '/' | relative_url }}">1</a>
+          {%- else -%}
+          <a class="pager__page" href="{{ '/page' | append: i | append: '/' | relative_url }}">{{ i }}</a>
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </span>
+
+    {%- if current < last_page %}
+    <a class="pager__link pager__link--next" href="{{ '/page' | append: current | plus: 1 | append: '/' | relative_url }}">
+      <span class="pager__dir">older &rarr;</span>
+      <span class="pager__name">page {{ current | plus: 1 }}</span>
+    </a>
+    {%- else %}<span class="pager__void">nothing older &rarr;</span>{% endif %}
+  </nav>
+  {%- endif %}
+</section>
+{%- else %}
+<section class="panel">
+  <div class="panel__head">
+    <div class="crumbs"><a href="{{ '/' | relative_url }}">root</a><span aria-hidden="true">:</span><span aria-hidden="true">~</span><span class="crumbs__file">council</span></div>
+    <span class="stamp">archive</span>
+  </div>
+  {% include post_list.html posts=site.posts %}
+</section>
+{%- endif %}

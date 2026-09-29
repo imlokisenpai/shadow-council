@@ -1,0 +1,28 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#04070a" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#efe6d2" media="(prefers-color-scheme: light)">
+
+  {%- comment -%} jekyll-seo-tag emits <title>, description, OG and JSON-LD {%- endcomment -%}
+  {%- seo -%}
+
+  {%- comment -%} inline SVG favicon: a green prompt caret on a black square {%- endcomment -%}
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3Crect%20width='16'%20height='16'%20fill='%2304070a'/%3E%3Cpath%20d='M3%204l3.5%203.5L3%2011'%20stroke='%2300ff9c'%20stroke-width='1.6'%20fill='none'/%3E%3Crect%20x='8'%20y='9.6'%20width='5'%20height='1.6'%20fill='%2300ff9c'/%3E%3C/svg%3E">
+
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="sitemap" type="application/xml" title="sitemap" href="{{ '/sitemap.xml' | relative_url }}">
+
+  {%- comment -%} kill the FOUC when someone has saved "light" as their theme {%- endcomment -%}
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('sc-theme');
+        if (!saved && window.matchMedia('(prefers-color-scheme: light)').matches) saved = 'light';
+        if (saved) document.documentElement.dataset.theme = saved;
+      } catch (e) {}
+    })();
+  </script>
+</head>

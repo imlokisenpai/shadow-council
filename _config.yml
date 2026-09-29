@@ -1,0 +1,101 @@
+# ==============================================================
+#  shadow council — site configuration
+#  edit this file, commit, done. CI builds the rest.
+# ==============================================================
+
+# --- Identity ----------------------------------------------------
+title: shadow council
+tagline: no leader. no line. no clearance.
+description: >-
+  A leaderless collective writing about power, rights, and the distance
+  between what the constitution says and what the street does. No
+  masthead, no spokesperson, no clearance required.
+
+author:
+  # Deliberately not a person. The collective has no spokesperson and
+  # this is what the feed, the schema.org metadata and the footer say.
+  # `type` makes jekyll-seo-tag emit @type: Organization rather than
+  # its default of Person.
+  name: the collective
+  type: Organization
+  url: https://imlokisenpai.github.io/shadow-council/
+  handle: no-one
+  github: https://github.com/imlokisenpai
+  # email: (deliberately unset)
+  # mastodon: (deliberately unset)
+
+# --- Location ----------------------------------------------------
+# NOTE: project sites live at https://<user>.github.io/<repo>
+# so baseurl MUST match the repository name.
+url: "https://imlokisenpai.github.io"
+baseurl: "/shadow-council"
+
+lang: en
+timezone: Asia/Kolkata
+
+# --- Build -------------------------------------------------------
+permalink: /:year/:month/:day/:title/
+
+pagination:
+  enabled: true
+  per_page: 8
+  permalink: "/page:num/"
+  title: ":title // page :num"
+  sort_field: "date"
+  sort_reverse: true
+  trail:
+    before: 2
+    after: 2
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    block:
+      line_numbers: false
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate-v2
+
+feed:
+  path: /feed.xml
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Makefile
+  - README.md
+  - vendor
+  - .bundle
+  - .jekyll-cache
+  - .jekyll-metadata
+  - node_modules
+
+# Front matter applied to every post / page unless overridden
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: false
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+
+# Read by _plugins/taxonomy.rb to build /threads/<x>/ and /sections/<y>/
+taxonomy:
+  enabled: true
+  tag_base: /threads
+  category_base: /sections
+  plural_tag_base: /threads
+  plural_category_base: /sections
